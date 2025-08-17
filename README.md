@@ -14,4 +14,4 @@ https://console.upstage.ai/api/document-digitization/document-parsing
 
 ---
 ### 🤖 HuggingFace Demo :
-https://huggingface.co/spaces/Cheeseorim/PDF_Summarize_Prompt_Test
+https://huggingface.co/spaces/Cheeseorim/doc_summarize_prompt_test
