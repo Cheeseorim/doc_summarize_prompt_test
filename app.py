@@ -2,13 +2,13 @@ import os
 import shutil
 import gradio as gr
 import requests
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
+# load_dotenv()
 
-upstage_api_key = os.getenv("UPSTAGE_API_KEY")
-openai_api_key = os.getenv("OPENAI_API_KEY")
+upstage_api_key = os.environ.get("UPSTAGE_API_KEY")
+openai_api_key = os.environ.get("OPENAI_API_KEY")
 if not upstage_api_key:
     raise ValueError("UPSTAGE api key가 없습니다")
 if not openai_api_key:
@@ -136,7 +136,16 @@ def load_default_model():
 with gr.Blocks() as demo:
     gr.Markdown("# 📄 PDF 문서 파싱 및 요약 도구")
     gr.Markdown("PDF 문서를 업로드하고 사용자 정의 프롬프트로 요약을 생성하세요.")
-    gr.Markdown("### 🤖 사용 가능한 모델 :\n```- gpt-5\n- gpt-5-mini (기본)\n- gpt-5-nano\n- gpt-4.1\n- gpt-4.1-mini\n- gpt-4.1-nano```")
+    gr.Markdown("""### 🤖 사용 가능한 모델 :
+    ```
+    - gpt-5
+    - gpt-5-mini (기본)
+    - gpt-5-nano
+    - gpt-4.1
+    - gpt-4.1-mini
+    - gpt-4.1-nano
+    ```
+    """)
     
     # 사용법 안내
     gr.Markdown("""
